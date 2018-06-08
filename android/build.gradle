@@ -2,6 +2,17 @@
 buildscript {
     repositories {
         jcenter()
+        google()
+        flatDir {
+            dirs 'libs'
+        }
+        /*
+        ivy {
+            url 'https://jcenter.bintray.com'
+            layout 'pattern', {
+                artifact '/[organisation]/[module]/sdk/[revision]/sdk-[revision].[ext]'
+            }
+        }*/
     }
 
     dependencies {
@@ -12,12 +23,12 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 26
     buildToolsVersion "23.0.1"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -32,5 +43,21 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
+    compile 'com.chartbeat:sdk:1.3.7@aar'
+
+    final RETROFIT_VERSION = '2.0.2'
+    final OKHTTP_VERSION = '3.3.1'
+    final RXJAVA_VERSION = '1.1.5'
+
+    // Http networking
+    compile "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+    compile "com.squareup.retrofit2:adapter-rxjava:$RETROFIT_VERSION"
+    compile "com.squareup.okhttp3:okhttp:$OKHTTP_VERSION"
+    compile "com.squareup.okhttp3:logging-interceptor:$OKHTTP_VERSION"
+
+    // Async reactive extensions
+    compile "io.reactivex:rxjava:$RXJAVA_VERSION"
+    // compile 'com.chartbeat:sdk:1.3.6@sources.jar'
+    // compile 'com.chartbeat:1.3.7:sdk-1.3.7:aar'
 }
   
