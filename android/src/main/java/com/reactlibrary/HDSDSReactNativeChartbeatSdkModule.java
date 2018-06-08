@@ -1,6 +1,7 @@
 
 package com.reactlibrary;
 
+import android.app.Activity;
 import android.app.Application;
 import android.util.Log;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -29,5 +30,21 @@ public class HDSDSReactNativeChartbeatSdkModule extends ReactContextBaseJavaModu
     Log.w("myApp", "no network");
     Tracker.setupTracker("54876", "androidsdktest.chartbeat.com", applicationContext);
   }
-  public void trackView()
+  public void trackView(String viewId, String viewTitle) {
+    Activity currentActivity = (Activity) reactContext.getCurrentActivity();
+    Tracker.trackView(currentActivity, viewId, viewTitle);
+    /*
+            msv.getScrollPosition(),
+            msv.getContentHeight(),
+            msv.getViewHeight(),
+            msv.getWidth());
+            */
+  }
+  public void setAuthors(String[] authors) {
+    Tracker.authors = authors;
+  }
+  public void setSections(String[] sections) {
+    Tracker.sections = sections;
+  }
+
 }
