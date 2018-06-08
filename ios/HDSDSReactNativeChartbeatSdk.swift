@@ -20,11 +20,24 @@ let test = CBhelper()
 class HDSDSReactNativeChartbeatSdk: NSObject {
     
     
-    @objc func setupTracker(withAccountId: Int32,domain: String) -> Void {
+    @objc func setupTracker(_ withAccountId: Int32,domain: String) -> Void {
         CBTracker.shared().setupTracker(withAccountId: withAccountId, domain: domain);
     }
-    @objc func trackView(view: NSString, viewId: String, title: String) -> Void {
-        CBTracker.shared().trackView(view, viewId: viewId, title: title)
+    @objc func trackView(_ viewId: String, title: String) -> Void {
+        DispatchQueue.main.async(execute: {
+            // Handle further UI related operations here....
+            //let ad = UIApplication.shared.delegate as! AppDelegate
+            //let context = ad.persistentContainer.viewContext
+            let rootViewController = UIApplication.shared.delegate?.window??.rootViewController
+            let view = rootViewController?.view
+            CBTracker.shared().trackView(view, viewId: viewId, title: title)
+        })
+        
     }
-    
+    @objc func setAuthors(_ authors: [String]) -> Void {
+        CBTracker.shared().authors = authors;
+    }
+    @objc func setSections(_ sections: [String]) -> Void {
+        CBTracker.shared().sections = sections;
+    }
 }
