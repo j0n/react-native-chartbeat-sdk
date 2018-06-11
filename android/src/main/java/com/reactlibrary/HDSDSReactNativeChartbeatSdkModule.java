@@ -4,6 +4,7 @@ package com.reactlibrary;
 import android.app.Activity;
 import android.app.Application;
 import android.util.Log;
+import java.util.Collection;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -33,18 +34,12 @@ public class HDSDSReactNativeChartbeatSdkModule extends ReactContextBaseJavaModu
   public void trackView(String viewId, String viewTitle) {
     Activity currentActivity = (Activity) reactContext.getCurrentActivity();
     Tracker.trackView(currentActivity, viewId, viewTitle);
-    /*
-            msv.getScrollPosition(),
-            msv.getContentHeight(),
-            msv.getViewHeight(),
-            msv.getWidth());
-            */
   }
-  public void setAuthors(String[] authors) {
-    Tracker.authors = authors;
+  public void setAuthors(Collections<String> authors) {
+    Tracker.setAuthors(authors);
   }
-  public void setSections(String[] sections) {
-    Tracker.sections = sections;
+  public void setSections(Collections<String> sections) {
+    Tracker.setSections(sections)
   }
 
 }

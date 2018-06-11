@@ -57,7 +57,5 @@ dependencies {
 
     // Async reactive extensions
     compile "io.reactivex:rxjava:$RXJAVA_VERSION"
-    // compile 'com.chartbeat:sdk:1.3.6@sources.jar'
-    // compile 'com.chartbeat:1.3.7:sdk-1.3.7:aar'
 }
   
