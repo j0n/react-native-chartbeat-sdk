@@ -14,7 +14,7 @@ const setupTracker = function (accountId, domain) {
       HDSDSReactNativeChartbeatSdk.setupTracker(accountId, domain);
     } else {
       try {
-        const parsedNumber = Number.parseInd(accountId)
+        const parsedNumber = Number.parseInt(accountId)
         if (Number.isNaN(parsedNumber)) {
           throw new Error('invalid account id');
         }
