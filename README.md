@@ -3,7 +3,9 @@
 
 ## Getting started
 
-`$ npm install react-native-react-native-chartbeat-sdk --save`
+`$ npm install react-native-chartbeat-sdk --save`
+
+### iOS
 Add `chartbeat.framework` to you xcode project
 
 ### Mostly automatic installation
