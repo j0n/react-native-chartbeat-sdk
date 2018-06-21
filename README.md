@@ -1,9 +1,12 @@
 
-# react-native-react-native-chartbeat-sdk
+# react-native-chartbeat-sdk
 
 ## Getting started
 
-`$ npm install react-native-react-native-chartbeat-sdk --save`
+`$ npm install react-native-chartbeat-sdk --save`
+
+### iOS
+Add `chartbeat.framework` to you xcode project
 
 ### Mostly automatic installation
 
@@ -13,7 +16,6 @@
 
 
 #### iOS
-
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `react-native-react-native-chartbeat-sdk` and add `HDSDSReactNativeChartbeatSdk.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libHDSDSReactNativeChartbeatSdk.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
@@ -33,14 +35,6 @@
   	```
       compile project(':react-native-react-native-chartbeat-sdk')
   	```
-
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `HDSDSReactNativeChartbeatSdk.sln` in `node_modules/react-native-react-native-chartbeat-sdk/windows/HDSDSReactNativeChartbeatSdk.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using React.Native.Chartbeat.Sdk.HDSDSReactNativeChartbeatSdk;` to the usings at the top of the file
-  - Add `new HDSDSReactNativeChartbeatSdkPackage()` to the `List<IReactPackage>` returned by the `Packages` method
 
 
 ## Usage
