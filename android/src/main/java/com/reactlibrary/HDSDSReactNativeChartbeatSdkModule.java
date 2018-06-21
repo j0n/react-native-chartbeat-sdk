@@ -46,7 +46,6 @@ public class HDSDSReactNativeChartbeatSdkModule extends ReactContextBaseJavaModu
   @ReactMethod
   public void setAuthors(ReadableArray authors) {
     ArrayList<Object> arrayListOfAuthors = authors.toArrayList();
-
     List<String> strings = new ArrayList<>(arrayListOfAuthors.size());
     for (Object object : arrayListOfAuthors) {
       strings.add(object.toString());
@@ -55,10 +54,9 @@ public class HDSDSReactNativeChartbeatSdkModule extends ReactContextBaseJavaModu
   }
   @ReactMethod
   public void setSections(ReadableArray sections) {
-    ArrayList<Object> arrayListOfAuthors = sections.toArrayList();
-
-    List<String> strings = new ArrayList<>(arrayListOfAuthors.size());
-    for (Object object : arrayListOfAuthors) {
+    ArrayList<Object> arrayListOfSecitons = sections.toArrayList();
+    List<String> strings = new ArrayList<>(arrayListOfSecitons.size());
+    for (Object object : arrayListOfSecitons) {
       strings.add(object.toString());
     }
     Tracker.setSections(strings);
